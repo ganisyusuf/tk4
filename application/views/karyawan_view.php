@@ -42,9 +42,11 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
+      <!-- Menu Home -->
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index3.html" class="nav-link">Home</a>
       </li>
+      <!-- Menu Contact -->
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
@@ -60,6 +62,7 @@
         <div class="navbar-search-block">
           <form class="form-inline">
             <div class="input-group input-group-sm">
+              <!-- Menu Search -->
               <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
                 <button class="btn btn-navbar" type="submit">
@@ -85,7 +88,7 @@
           <span class="dropdown-item dropdown-header">15 Notifications</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 reimbursement
+            <i class="fas fa-envelope mr-2"></i> 1 Pengajuan cuti
             <span class="float-right text-muted text-sm">3 mins</span>
           </a>
           <div class="dropdown-divider"></div>
@@ -95,7 +98,7 @@
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 New reports
+            <i class="fas fa-file mr-2"></i> 3 new reports
             <span class="float-right text-muted text-sm">2 days</span>
           </a>
           <div class="dropdown-divider"></div>
@@ -119,7 +122,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="<?php echo base_url(); ?>assets/dist/img/ganis.jpeg" class="img-circle elevation-2" alt="User Image">
+          <img src="<?php echo base_url(); ?>assets/dist/img/dicky.jpeg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
         <?php 
@@ -158,7 +161,7 @@
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
-              <p>Data Karyawan
+              <p>Data Profile
               </p>
             </a>
             
@@ -168,10 +171,10 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Pengajuan Cuti
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
+          
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
@@ -251,7 +254,7 @@
             <a href="pages/kanban.html" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
-                Penggajian Karyawan
+                Slip Gaji 
               </p>
             </a>
           </li>
@@ -296,14 +299,14 @@
         <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <!-- Menu Data Karyawan, Menampilkan jumlah karyawan -->
+            <!-- Menu masuk, untuk absensi masuk -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>100</h3>
-                <p>Data Karyawan</p>
+                <h3>Masuk</h3>
+                <p style="color: #12A3B8;">a</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+              <i class="nav-icon fas fa-sign-in-alt"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -311,41 +314,43 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <!-- Menu Absensi, menampilkan jumlah absensi -->
+            <!-- Menu keluar, untuk absensi pulang -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>55<sup style="font-size: 20px"></sup></h3>
-                <p>Data Absensi</p>
+                <h3>Keluar<sup style="font-size: 20px"></sup></h3>
+                <p style="color: #27A844;">a</p>
+
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+              <i class="nav-icon fas fa-sign-out-alt"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <!-- Menu Data Penggajian Karyawan, menampilkan jumlah Data Penggajian Karyawan -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>64</h3>
-                <p>Data Penggajian Karyawan</p>
-              </div>
-              <div class="icon">
-                <i class="fa fa-money"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <!-- Menu Data Cuti, menampilkan jumlah data cuti -->
+            <!-- Menu terlambat, menampilkan jumlah keterlambatan -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>15</h3>
-                <p>Data Cuti</p>
+                <h3>3</h3>
+                <h4>Terlambat</h4>
+              </div>
+              <div class="icon">
+                <i class="fas fa-running"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <!-- Menu Sisa Cuti, menampilkan jumlah sisa cuti -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>10</h3>
+                <h4>Sisa Cuti</h4>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
@@ -361,80 +366,20 @@
           <!-- Left col -->
           <section class="col-lg-7 connectedSortable">
             <!-- Custom tabs (Charts with tabs)-->
-            <!-- Grafik Early and Late Rate -->
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">
+                  <!-- Notes -->
                   <i class="fas fa-chart-pie mr-1"></i>
-                  Early and Late Rate
+                  Silahkan klik tombol Masuk atau Pulang diatas untuk melakukan presesi hari ini.
                 </h3>
                 <div class="card-tools">
-                  <ul class="nav nav-pills ml-auto">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
-                    </li>
-                  </ul>
+                  
                 </div>
               </div><!-- /.card-header -->
-              <div class="card-body">
-                <div class="tab-content p-0">
-                  <!-- Morris chart - Sales -->
-                  <div class="chart tab-pane active" id="revenue-chart"
-                       style="position: relative; height: 300px;">
-                      <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
-                   </div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5 connectedSortable">
+            
 
-            <div class="">
-              <div class="card-header border-0">
-
-                </h3>
-
-              </div>
-              <div>
-              </div>
-              <!-- /.card-body-->
-              <div class="card-footer bg-transparent">
-                <div class="row">
-                  <div class="col-4 text-center">
-                    <div id="sparkline-1" hidden></div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-4 text-center">
-                    <div id="sparkline-2" hidden></div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-4 text-center">
-                    <div id="sparkline-3" hidden></div>
-                  </div>
-                  <!-- ./col -->
-                </div>
-                <!-- /.row -->
-              </div>
-            </div>
-            <!-- /.card -->
-            </div>
-            <!-- /.card -->
-          </section>
-          <!-- right col -->
-        </div>
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
+            
   <!-- /.content-wrapper -->
   <footer class="main-footer">
 

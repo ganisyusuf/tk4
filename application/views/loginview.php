@@ -11,14 +11,17 @@
     <title>Login</title>
   </head>
   <body>
+    <!-- Form login menggunakan method post -->
     <form class="form-signin" action="<?= base_url().'staff/login/login_post' ?>" method="post">
-
-      <?php   
+    
+      <?php  
+            // Jika login gagal akan menampilkan pesan error
             if ($error != "NO_ERROR") {
               echo '<div class="alert alert-danger" role="alert">';
               echo "$error";
               echo '</div>';
             } 
+            // Jika login berhasil akan menampilkan pesan sukses
             if($this->session->flashdata('success')) {
               $data = $this->session->flashdata('success');
               echo '<div class="alert alert-success" role="alert">';
@@ -26,15 +29,17 @@
               echo '</div>';
             }
        ?>
-
+      <!-- Form Login -->
   	  <center><h1 class="h3 mb-3 font-weight-normal">Silahkan Login</h1></center>
   	  <label for="inputEmail" class="sr-only">Username</label>
+      <!-- Untuk input email -->
   	  <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+        <!-- Untuk input Password -->
   	  <label for="inputPassword" class="sr-only">Password</label>
   	  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+      <!-- button login -->
   	  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
       <br></br>
-      <center><h5>Belum punya akun ? <a href="<?= base_url().'staff/register' ?>">Ayo Daftar</a></h5></center>
 	</form>
 
     <!-- Optional JavaScript -->

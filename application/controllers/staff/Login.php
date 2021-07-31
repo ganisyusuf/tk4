@@ -14,17 +14,22 @@ class Login extends CI_Controller {
 		}
 
 		$this->load->helper('url');
+		#Menampilkan halaman loginview
 		$this->load->view('loginview',$data);
 	}
 
+	// Fungsi untuk post login
 	function login_post(){
 
 		if (isset($_POST)) {
 				$email = $_POST['email'];
+				#password di hash dengan md5
 				$password= md5($_POST['password']);
 
+				#query ke tabel user
 				$query = $this->db->query("SELECT * FROM `user` WHERE `email`='$email' AND password='$password'");
 
+				// Beri kondisi, jika email dan password ditemukan maka akan masuk ke halaman dashboard
 				if ($query->num_rows()) {
 
 					$result = $query->result_array();
@@ -33,9 +38,10 @@ class Login extends CI_Controller {
 
 					redirect('staff/dashboard');
 				}
+				// jika email dan password salah maka akan gagal login dan menampilkan pesan error
 				else{
 					//invalid credentials
-					$this->session->set_flashdata('error', '');
+					$this->session->set_flashdata('error', 'Invalid Email/Password');
 					redirect("staff/login");
 				}
 
@@ -44,7 +50,7 @@ class Login extends CI_Controller {
 		}
 	}
 
-
+	// Fungsi untuk Logout, jika berhasil logout maka dikembalikan ke halaman login
 	function logout(){
 		session_destroy();
 
