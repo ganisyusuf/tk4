@@ -17,16 +17,16 @@ class Dashboard extends CI_Controller {
 			#Get data user dari class staff model menggunakan fungsi get_profile
 			$data['user'] = $this->staff_model->get_profile($user_id);
 			$this->load->helper('url'); 
-			#Akan menampilkan halaman karyawan_view
-			$this->load->view('index', $data);
 			
-			// if($data['role_id']==1){
-			// 	$this->load->view('karyawan_view', $data);
-			// }elseif($data['role_id']==2){
-			// 	$this->load->view('index', $data);
-			// }else{
-			// 	redirect('staff/login');
-			// }
+			foreach($data['user'] as $u) {
+				if($u->role_id == 1){
+					$this->load->view('karyawan_view', $data);
+				}elseif($u->role_id == 2){
+					$this->load->view('index', $data);
+				}else{
+					redirect('staff/login');
+				}
+			}
 		}
 		#Jika data tidak ditemukan akan masuk ke halaman login
 		else{
