@@ -11,19 +11,31 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		#Jika data user ditemukan maka akan masuk ke halaman dashboard
-		if (isset($_SESSION['user_id'])) {
-			$user_id = $_SESSION['user_id'];
+		if (isset($_SESSION['id_pegawai'])) {
+			$id_pegawai = $_SESSION['id_pegawai'];
 
 			#Get data user dari class staff model menggunakan fungsi get_profile
-			$data['user'] = $this->staff_model->get_profile($user_id);
+			$data['pegawai'] = $this->staff_model->get_profile($id_pegawai);
 			$this->load->helper('url'); 
 			
-			foreach($data['user'] as $u) {
-				if($u->role_id == 1){
-					$this->load->view('karyawan_view', $data);
-				}elseif($u->role_id == 2){
-					$this->load->view('index', $data);
-				}else{
+			// Get role_id user
+			// Jika role_id = 1 maka akan masuk ke dashboard user/karyawan, jika role_id = 2 akan masuk ke dashboard management
+			foreach($data['pegawai'] as $u) {
+				
+				if($u->id_bagian == 7){
+					$data['bagian'] = $this->staff_model->get_bagian();
+					$this->load->helper('url'); 
+					$this->load->view('adminView', $data);
+				}elseif($u->id_bagian == 8){
+					$this->load->view('manageView', $data);
+				}elseif($u->id_bagian == 9){
+					$this->load->view('gudangView', $data);
+				}elseif($u->id_bagian == 10){
+					$this->load->view('tukangPesanView', $data);
+				}elseif($u->id_bagian == 11){
+					$this->load->view('produksiView', $data);
+				}
+				else{
 					redirect('staff/login');
 				}
 			}

@@ -22,21 +22,26 @@ class Login extends CI_Controller {
 	function login_post(){
 
 		if (isset($_POST)) {
-				$email = $_POST['email'];
+				$username = $_POST['username'];
 				#password di hash dengan md5
-				$password= md5($_POST['password']);
+				$password= $_POST['password'];
 
 				#query ke tabel user
-				$query = $this->db->query("SELECT * FROM `user` WHERE `email`='$email' AND password='$password'");
+				$query = $this->db->query("SELECT * FROM `pegawai` WHERE `username`='$username' AND password='$password'");
 
 				// Beri kondisi, jika email dan password ditemukan maka akan masuk ke halaman dashboard
 				if ($query->num_rows()) {
 
-					$result = $query->result_array();
+					while($result = $query->result_array()) {
+					// {
+					// 	$data [] = $result;
+					// }
+					// return $data;
 
-					$this->session->set_userdata('user_id', $result[0]['id']);
+					$this->session->set_userdata('id_pegawai', $result[0]['id_pegawai']);
 
 					redirect('staff/dashboard');
+					}
 				}
 				// jika email dan password salah maka akan gagal login dan menampilkan pesan error
 				else{
