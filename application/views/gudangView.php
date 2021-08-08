@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,17 +9,18 @@
     <title>Thesisku</title>
 
     <!-- Bootstrap -->
-    <link href="<?php echo base_url(); ?>/css/bootstrap.min.css" rel="stylesheet">
-	<link href="<?php echo base_url(); ?>/css/stylesheet.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/stylesheet.css" rel="stylesheet">
 
     <!--[endif]-->
   </head>
   <body>
     
 	<?php
-		include "navbar.php";
+		include "navbar_gudang.php";
 	?>
 	<!--strat-->
+<!--strat-->
 <div class="accordion horizontal">
     <ul>
         <li>

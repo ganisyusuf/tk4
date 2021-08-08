@@ -23,39 +23,31 @@
 	<?php
 		include "navbar.php";
 	?>
-    	
 
-        <div class="container-fluid">
+    <!-- mulai form -->
+    <div class="container-fluid">
     	<div class="col-md-7 col-md-offset-2">
-            <?php
-                    foreach($bagian as $u){ 
-            ?>
-    		<form class="form-horizontal" method="post" action="<?= base_url().'staff/bagian/bagian_update/'. $u->id_bagian ?>">
-
-                <legend> Form Edit Bagian </legend>
+    		<form class="form-horizontal" method="post" action="<?= base_url().'staff/bagian/bagian_post' ?>">
+    			<legend> Form Input Bagian </legend>
                 <div class="form-group">
                 	<label for="nama_bagian" class="col-md-2"> Nama Bagian  </label>
                 	<div class="col-md-7">
-                    	<input type="text" class="form-control" id="nama_bagian" name="nama_bagian" value="<?php echo $u->nama_bagian; ?>">
+                    	<input type="text" class="form-control" id="nama_bagian" placeholder="nama bagian" name="nama_bagian">
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                 	<div class="col-md-7 col-md-offset-2">
-                		<input type="submit" class="btn btn-md btn-primary" name="update" value="Update" >
-                        	<a class="btn btn-danger" href="<?= base_url().'staff/bagian' ?>" role="button">Batal</a>
-                    	
+
+                    <input type="submit" class="btn btn-primary" name="simpan" value="simpan">
+                    <a class="btn btn-danger" href="<?= base_url().'staff/bagian' ?>" role="button">Batal</a>
                     </div>
                 </div>
-                <?php
-                    }
-                    ?>
     		</form>
         </div>
     </div>
     
-    <!-- akhir form -->   
-    
+    <!-- akhir form -->
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

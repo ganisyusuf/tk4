@@ -22,40 +22,23 @@
     
 	<?php
 		include "navbar.php";
-	?>
-    	
 
-        <div class="container-fluid">
-    	<div class="col-md-7 col-md-offset-2">
-            <?php
-                    foreach($bagian as $u){ 
-            ?>
-    		<form class="form-horizontal" method="post" action="<?= base_url().'staff/bagian/bagian_update/'. $u->id_bagian ?>">
+  ?>
+		
 
-                <legend> Form Edit Bagian </legend>
-                <div class="form-group">
-                	<label for="nama_bagian" class="col-md-2"> Nama Bagian  </label>
-                	<div class="col-md-7">
-                    	<input type="text" class="form-control" id="nama_bagian" name="nama_bagian" value="<?php echo $u->nama_bagian; ?>">
-                    </div>
-                </div>
-                <br>
-                <div class="form-group">
-                	<div class="col-md-7 col-md-offset-2">
-                		<input type="submit" class="btn btn-md btn-primary" name="update" value="Update" >
-                        	<a class="btn btn-danger" href="<?= base_url().'staff/bagian' ?>" role="button">Batal</a>
-                    	
-                    </div>
-                </div>
-                <?php
-                    }
-                    ?>
-    		</form>
-        </div>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-7 col-md-offset-2">
+      <a href="<?= base_url().'staff/bagian/tambah' ?>"><input type="submit" class="btn btn-md btn-primary" name="Tambah Bagian" value="Tambah Bagian" ></a></br>
+      </div>
     </div>
-    
-    <!-- akhir form -->   
-    
+  </div>
+  <br> 
+
+
+	<?php
+    $this->load->view('bagian_tabel.php', $data["bagian"]);
+	?>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

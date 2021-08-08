@@ -23,8 +23,6 @@ class Dashboard extends CI_Controller {
 			foreach($data['pegawai'] as $u) {
 				
 				if($u->id_bagian == 7){
-					$data['bagian'] = $this->staff_model->get_bagian();
-					$this->load->helper('url'); 
 					$this->load->view('adminView', $data);
 				}elseif($u->id_bagian == 8){
 					$this->load->view('manageView', $data);
@@ -45,4 +43,5 @@ class Dashboard extends CI_Controller {
 			redirect('staff/login');
 		}	
 	}
+	
 }

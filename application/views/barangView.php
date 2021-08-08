@@ -22,32 +22,23 @@
     
 	<?php
 		include "navbar.php";
-	?>
 
-    <!-- mulai form -->
+  ?>
+		
+
     <div class="container-fluid">
-    	<div class="col-md-7 col-md-offset-2">
-    		<form class="form-horizontal" method="post" action="bagian_simpan.php">
-    			<legend> Form Input Bagian </legend>
-                <div class="form-group">
-                	<label for="nama_bagian" class="col-md-2"> Nama Bagian  </label>
-                	<div class="col-md-7">
-                    	<input type="text" class="form-control" id="nama_bagian" placeholder="nama bagian" name="nama_bagian">
-                    </div>
-                </div>
-                <br>
-                <div class="form-group">
-                	<div class="col-md-7 col-md-offset-2">
-
-                    <a href="<?= base_url().'staff/bagian/bagian_post' ?>"><input type="submit" class="btn btn-primary" name="simpan" value="simpan">
-                        	<a class="btn btn-danger" href="index.php" role="button">Batal</a>
-                    </div>
-                </div>
-    		</form>
-        </div>
+    <div class="row">
+      <div class="col-md-7 col-md-offset-2">
+      <a href="<?= base_url().'staff/barang/tambah' ?>"><input type="submit" class="btn btn-md btn-primary" name="Tambah Barang" value="Tambah Barang" ></a></br>
+      </div>
     </div>
-    
-    <!-- akhir form -->
+  </div>
+  <br> 
+
+
+	<?php
+    $this->load->view('barang_tabel.php', $data["barang"]);
+	?>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

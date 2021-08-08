@@ -19,23 +19,20 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     
 		<ul class="nav navbar-nav">
-			<li><a href="<?= base_url().'staff/dashboard' ?>"> Home </a></li>
-            <li><a href="<?= base_url().'staff/bagian' ?>"> Bagian </a></li>   
-            <li><a href="<?= base_url().'staff/barang' ?>"> Barang </a></li>
-            <li><a href="<?= base_url().'staff/pegawai' ?>"> Pegawai </a></li>   
-		</ul>
-            
+			<li> <a href="stok.php"> Stok Barang </a></li>
+        	<li><a href="<?= base_url().'staff/pengambilan' ?>"> Pengambilan </a></li>   
+			
+        </ul>
+    
 <!-- Navbar Right-->
-		<ul class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav navbar-right">
 
-
-		<?php 
+        <!-- <?php 
             $no = 1;
             foreach($pegawai as $u){ 
             ?>
-            <!-- <h1 style="color:green">Selamat datang <?php echo $u->name ?></h1> -->
 			<li><a href="#"> <?php echo $u->username ?> </a></li>
-            <?php } ?>
+            <?php } ?> -->
 			<li><a href="<?= base_url().'staff/login/logout' ?>"> Log out </a></li>
 		</ul>
     
