@@ -25,7 +25,8 @@ class Dashboard extends CI_Controller {
 				if($u->id_bagian == 7){
 					$this->load->view('adminView', $data);
 				}elseif($u->id_bagian == 8){
-					$this->load->view('manageView', $data);
+					$data['eoq'] = $this->staff_model->get_eoq();
+					$this->load->view('managerView', $data);
 				}elseif($u->id_bagian == 9){
 					$this->load->view('gudangView', $data);
 				}elseif($u->id_bagian == 10){

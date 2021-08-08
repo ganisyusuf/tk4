@@ -21,31 +21,16 @@
   <body>
     
 	<?php
-		include "navbar_gudang.php";
-		
-		// include "pegawai_tambah.php";
-		
-		// include "pegawai_tabel.php";
+		include "navbar_manager.php";
 	?>
-
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-md-7 col-md-offset-2">
-      <a href="<?= base_url().'staff/pengambilan/tambah' ?>"><input type="submit" class="btn btn-md btn-primary" name="Tambah Pengambilan" value="Tambah Pengambilan" ></a></br>
-      </div>
-    </div>
-  </div>
-  <br> 
-
-
-	<?php
-    $this->load->view('pengambilan_tabel.php', $data["pengambilan"]);
-	?>
-
+    <?php
+    $this->load->view('tabel_eoq.php', $data["eoq"]);
+    ?>
     
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?php echo base_url(); ?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
   </body>
 </html>

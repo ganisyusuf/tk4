@@ -20,6 +20,18 @@ class Barang extends CI_Controller {
 		$this->load->view('barang_tambah');
 	}
 
+	function tukang_pesan()
+	{	
+		$data['barang'] = $this->staff_model->get_barang();
+		$this->load->helper('url'); 
+		$this->load->view('barangView_tukangPesan', $data);
+	}
+
+	function tambah_tukang_pesan()
+	{
+		$this->load->view('barang_tukangPesan');
+	}
+
 
 	function barang_post(){
 
@@ -46,6 +58,30 @@ class Barang extends CI_Controller {
 		} 
 	}
 
+	function barang_tukang_pesan(){
+
+		if (isset($_POST)) {
+
+			$nama_barang=$_POST['nama_barang'];
+            $harga_barang=$_POST['harga_barang'];
+            $biaya_penyimpanan=$_POST['biaya_penyimpanan'];
+            $periode_permintaan=$_POST['periode_permintaan'];
+            $satuan = $_POST['satuan'];
+			$konversi = $_POST['konversi'];
+
+
+			try {
+				$this->db->query("INSERT INTO `barang` (`nama_barang`, `harga_barang`, `biaya_penyimpanan`, `periode_permintaan`, `satuan`, `konversi`) VALUES
+				('$nama_barang', '$harga_barang', '$biaya_penyimpanan', '$periode_permintaan', '$satuan', '$konversi')");
+
+				$this->session->set_flashdata('success', 'Tambah barang berhasil!');
+				redirect('staff/barang/tukang_pesan');
+			} catch(Exception $e) {
+				$this->session->set_flashdata('error', 'Tambah barang Gagal, silahkan dicoba');
+				redirect("staff/barang/tukang_pesan");
+			}
+		} 
+	}
 	function update($id_barang) {
 		$data['barang'] = $this->staff_model->get_barang_id($id_barang);
 		$this->load->helper('url'); 

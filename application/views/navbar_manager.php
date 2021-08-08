@@ -19,13 +19,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     
 		<ul class="nav navbar-nav">
-			<li> <a href="<?= base_url().'staff/stock' ?>"> Stok Barang </a></li>
-        	<li><a href="<?= base_url().'staff/pengambilan' ?>"> Pengambilan </a></li>   
-			
-        </ul>
+		
+			<li><a href="<?= base_url().'staff/manager' ?>"> EOQ </a></li>
+            <li><a href="<?= base_url().'staff/manager/rop' ?>"> ROP </a></li>
+            
+        </ul> 
     
 <!-- Navbar Right-->
-	<ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right">
 		<?php 
             $no = 1;
             foreach($pegawai as $u){ 

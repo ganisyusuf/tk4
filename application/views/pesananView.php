@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,17 +20,13 @@
   <body>
     
 	<?php
-		include "navbar_gudang.php";
-		
-		// include "pegawai_tambah.php";
-		
-		// include "pegawai_tabel.php";
+		include "navbar_tukangPesan.php";
 	?>
 
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-7 col-md-offset-2">
-      <a href="<?= base_url().'staff/pengambilan/tambah' ?>"><input type="submit" class="btn btn-md btn-primary" name="Tambah Pengambilan" value="Tambah Pengambilan" ></a></br>
+      <a href="<?= base_url().'staff/pesanan/tambah' ?>"><input type="submit" class="btn btn-md btn-primary" name="Tambah Pesanan" value="Tambah Pesanan" ></a></br>
       </div>
     </div>
   </div>
@@ -39,10 +34,10 @@
 
 
 	<?php
-    $this->load->view('pengambilan_tabel.php', $data["pengambilan"]);
+    $this->load->view('pesanan_tabel.php', $data["pemesanan"]);
 	?>
 
-    
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
