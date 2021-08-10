@@ -31,8 +31,6 @@ class Dashboard extends CI_Controller {
 					$this->load->view('gudangView', $data);
 				}elseif($u->id_bagian == 10){
 					$this->load->view('tukangPesanView', $data);
-				}elseif($u->id_bagian == 11){
-					$this->load->view('produksiView', $data);
 				}
 				else{
 					redirect('staff/login');
